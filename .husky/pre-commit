@@ -1,0 +1,7 @@
+echo "🔍 Running lint..."
+yarn lint
+
+echo "🏗️  Building project..."
+yarn build
+
+echo "✅ All pre-commit checks passed!"

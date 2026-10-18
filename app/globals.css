@@ -1,0 +1,503 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+body {
+  background-color: var(--background);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+:root {
+  color-scheme: light;
+  --radius: 0.625rem;
+  --background: oklch(97.023% 0.00426 15.806);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(0.99 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --card-second: oklch(1 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(from #2d3f3d l c h);
+  --primary-foreground: oklch(19.689% 0.0016 16.521 / 0.63);
+  --secondary: oklch(from #394f4d l c h);
+  --third: oklch(86.524% 0.13146 142.937);
+  --third: rgb(197, 211, 196);
+  --fourth: oklch(62.353% 0.09213 223.529);
+
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+
+  --panel-border: #e5e7eb;
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(80.727% 0.10933 25.187 / 0.589);
+  --chart-2: oklch(80.348% 0.11785 42.469 / 0.514);
+  --chart-3: oklch(92.059% 0.15697 99.045 / 0.541);
+  --chart-4: oklch(73.231% 0.14149 249.08 / 0.507);
+  --chart-5: oklch(89.883% 0.21327 140.836 / 0.507);
+  --chart-6: oklch(68.731% 0.19645 300.684 / 0.568);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(from #242a2d l c h);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(from #242a2d l c h);
+  --card-foreground: oklch(0.985 0 0);
+  --card-second: oklch(from #1e293b l c h);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(68.949% 0.00008 271.152);
+  --primary: oklch(16.5% 0.028 181.6);
+  --primary-foreground: oklch(91.605% 0.0087 16.658);
+  --secondary: oklch(from #2d3f3d l c h);
+  --secondary-foreground: oklch(0.985 0 0);
+  --third: oklch(70.501% 0.04798 4.548);
+  --fourth: oklch(27.987% 0.04407 217.255);
+
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+
+  --panel-border: #334155;
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(27.488% 0.08512 25.566);
+  --chart-2: oklch(53.837% 0.17659 37.632);
+  --chart-3: oklch(56.67% 0.1867 99.97);
+  --chart-4: oklch(42.13% 0.1635 254.42);
+  --chart-5: oklch(31.81% 0.1057 142.5);
+  --chart-6: oklch(29.8% 0.152 300);
+
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+.ant-picker {
+  height: 45px;
+}
+
+.ant-select.ant-select-css-var,
+.ant-picker.ant-picker-css-var,
+.ant-picker-body.ant-picker-content.css-var-root.ant-select-css-var {
+  --ant-select-hover-border-color: #000000 !important;
+  --ant-select-active-border-color: #000000 !important;
+  --ant-select-active-outline-color: rgba(0, 0, 0, 0.1) !important;
+  --ant-date-picker-active-border-color: #000000 !important;
+  --ant-date-picker-hover-border-color: #000000 !important;
+}
+
+.dark .ant-picker,
+.dark .ant-picker-input > input {
+  color: #e2e8f0;
+}
+
+.dark .ant-picker-input > input::placeholder {
+  color: #64748b;
+}
+
+.dark .ant-picker {
+  background-color: #011613;
+  border-color: #373c4a;
+}
+
+.dark .ant-picker-focused,
+.dark .ant-picker:hover {
+  border-color: #4b7f84;
+  box-shadow: 0 0 0 1px #4b7f84;
+}
+
+.dark .ant-picker-dropdown .ant-picker-panel-container,
+.dark .ant-picker-dropdown .ant-picker-panel {
+  background-color: #011613;
+  border-color: #373c4a;
+  color: #e2e8f0;
+}
+
+.dark .ant-picker-dropdown .ant-picker-header {
+  border-color: #373c4a;
+  color: #e2e8f0;
+}
+
+.dark .ant-picker-dropdown .ant-picker-content th,
+.dark .ant-picker-dropdown .ant-picker-cell {
+  color: #94a3b8;
+}
+
+.dark .ant-picker-dropdown .ant-picker-cell-in-view {
+  color: #e2e8f0;
+}
+
+.dark
+  .ant-picker-dropdown
+  .ant-picker-cell-in-view.ant-picker-cell-selected
+  .ant-picker-cell-inner,
+.dark
+  .ant-picker-dropdown
+  .ant-picker-cell-in-view.ant-picker-cell-range-start
+  .ant-picker-cell-inner,
+.dark
+  .ant-picker-dropdown
+  .ant-picker-cell-in-view.ant-picker-cell-range-end
+  .ant-picker-cell-inner {
+  background-color: #2a5a5f;
+  color: #e2e8f0;
+}
+
+.dark
+  .ant-picker-dropdown
+  .ant-picker-cell-in-view.ant-picker-cell-in-range::before {
+  background-color: #1f4648;
+}
+
+/* Target the exact Ant Design Select classes with CSS variables */
+.dark .ant-select.ant-select-outlined.ant-select-multiple,
+.dark .ant-select.ant-select-outlined.ant-select-multiple.ant-select-show-arrow,
+.dark
+  .ant-select.ant-select-outlined.ant-select-multiple.ant-select-show-search {
+  background-color: transparent !important;
+}
+
+.dark .ant-select.ant-select-outlined.ant-select-multiple .ant-select-selector,
+.dark .ant-select-outlined.ant-select-multiple .ant-select-selector {
+  background-color: #011613 !important;
+  border-color: #373c4a !important;
+}
+
+.dark .ant-select-multiple .ant-select-selection-search-input {
+  background-color: transparent !important;
+  color: #f1f5f9 !important;
+}
+
+.dark .ant-select-multiple .ant-select-selection-placeholder {
+  color: #94a3b8 !important;
+}
+
+.dark .ant-select-multiple .ant-select-selection-item {
+  background-color: #1a2420 !important;
+  border-color: #373c4a !important;
+  color: #f1f5f9 !important;
+}
+
+.dark .ant-select-multiple .ant-select-selection-item-content {
+  color: #f1f5f9 !important;
+}
+
+.dark .ant-select-multiple .ant-select-selection-item-remove {
+  color: #747780 !important;
+}
+
+.dark .ant-select-show-arrow .ant-select-arrow {
+  color: #94a3b8 !important;
+}
+
+/* Open state for multiple select */
+.dark .ant-select-multiple.ant-select-open .ant-select-selector {
+  background-color: #011613 !important;
+  border-color: #4a5568 !important;
+  box-shadow: 0 0 0 2px rgba(74, 85, 104, 0.2) !important;
+}
+
+/* CSS variable overrides for dark mode */
+.dark .ant-select.css-var-root {
+  --ant-color-bg-container: #011613;
+  --ant-color-border: #373c4a;
+  --ant-color-text: #f1f5f9;
+  --ant-color-text-placeholder: #94a3b8;
+}
+
+/* Dropdown for multiple select */
+.dark .ant-select-dropdown.ant-select-dropdown-placement-bottomLeft {
+  background-color: #0a1612 !important;
+  border: 1px solid #373c4a !important;
+}
+
+.dark .ant-select-item-option {
+  color: #e2e8f0 !important;
+}
+
+.dark .ant-select-item-option-selected {
+  background-color: #1a2420 !important;
+}
+
+.dark .ant-select-item-option-active,
+.dark .ant-select-item-option:hover {
+  background-color: #0f1915 !important;
+}
+
+/* Target CSS variable root classes specifically */
+.dark .css-var-root.ant-select-css-var {
+  --ant-color-bg-container: #011613 !important;
+  --ant-color-bg-elevated: #011613 !important;
+  --ant-color-border: #373c4a !important;
+  --ant-color-border-secondary: #373c4a !important;
+  --ant-color-text: #f1f5f9 !important;
+  --ant-color-text-placeholder: #94a3b8 !important;
+  --ant-color-text-disabled: #64748b !important;
+  --ant-control-item-bg-hover: #0f1915 !important;
+  --ant-control-item-bg-active: #1a2420 !important;
+}
+
+.dark .ant-select.css-var-root.ant-select-css-var .ant-select-selector {
+  background-color: #011613 !important;
+  border-color: #373c4a !important;
+  color: #f1f5f9 !important;
+}
+
+.dark .css-var-root.ant-select-css-var .ant-select-selection-placeholder {
+  color: #94a3b8 !important;
+}
+
+.dark .css-var-root.ant-select-css-var .ant-select-selection-item {
+  background-color: #1a2420 !important;
+  border-color: #373c4a !important;
+  color: #f1f5f9 !important;
+}
+
+.dark .css-var-root.ant-select-css-var .ant-select-arrow {
+  color: #94a3b8 !important;
+}
+
+/* Open state */
+.dark .css-var-root.ant-select-css-var.ant-select-open .ant-select-selector,
+.dark .css-var-root.ant-select-css-var.ant-select-focused .ant-select-selector {
+  background-color: #011613 !important;
+  border-color: #4a5568 !important;
+  box-shadow: 0 0 0 2px rgba(74, 85, 104, 0.2) !important;
+}
+
+/* Dropdown with CSS vars */
+.dark .ant-select-dropdown.css-var-root.ant-select-css-var {
+  background-color: #0a1612 !important;
+  border-color: #373c4a !important;
+}
+
+.ant-select-content,
+.ant-picker {
+  line-height: 42px !important;
+}
+
+.ant-select {
+  border-radius: 8px !important;
+}
+
+@theme inline {
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-6: var(--chart-6);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+
+  --color-panel-border: var(--panel-border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-card-second: var(--card-second);
+  --color-text-gray-900: var(--text-gray-900);
+  --color-text-gray-100: var(--text-gray-100);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* Global Custom Scrollbar Styles */
+/* Add this to your globals.css or main CSS file */
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: oklch(0.708 0 0) transparent;
+}
+
+/* Chrome, Safari, Edge */
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: oklch(0.708 0 0);
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.708 0 0);
+}
+
+/* Optional: Darker scrollbar for dark mode */
+.dark *::-webkit-scrollbar-thumb {
+  background: oklch(0.708 0 0);
+}
+
+.dark *::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.708 0 0);
+}
+
+/* Optional: Custom scrollbar for specific elements */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: oklch(0.708 0 0);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.708 0 0);
+}
+
+/* Thin scrollbar variant */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: oklch(0.708 0 0);
+  border-radius: 10px;
+}
+
+/* Hide scrollbar variant (but keep functionality) */
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes genie-in-simple {
+  0% {
+    transform: scale(0.1) translateY(90%) translateX(40%);
+    opacity: 0;
+  }
+  15% {
+    transform: scale(0.25) translateY(75%) translateX(35%);
+    opacity: 0.3;
+  }
+  30% {
+    transform: scale(0.4) translateY(50%) translateX(25%);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(0.6) translateY(30%) translateX(15%);
+    opacity: 0.7;
+  }
+  70% {
+    transform: scale(0.8) translateY(12%) translateX(6%);
+    opacity: 0.85;
+  }
+  85% {
+    transform: scale(0.95) translateY(3%) translateX(2%);
+    opacity: 0.95;
+  }
+  100% {
+    transform: scale(1) translateY(0) translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes genie-out-simple {
+  0% {
+    transform: scale(1) translateY(0) translateX(0);
+    opacity: 1;
+  }
+  15% {
+    transform: scale(0.95) translateY(3%) translateX(2%);
+    opacity: 0.95;
+  }
+  30% {
+    transform: scale(0.8) translateY(12%) translateX(6%);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(0.6) translateY(30%) translateX(15%);
+    opacity: 0.7;
+  }
+  70% {
+    transform: scale(0.4) translateY(50%) translateX(25%);
+    opacity: 0.5;
+  }
+  85% {
+    transform: scale(0.25) translateY(75%) translateX(35%);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(0.1) translateY(90%) translateX(40%);
+    opacity: 0;
+  }
+}
+
+.animate-genie-in {
+  animation: genie-in-simple 0.21s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+  will-change: transform, opacity;
+}
+
+.animate-genie-out {
+  animation: genie-out-simple 0.21s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+  will-change: transform, opacity;
+}
